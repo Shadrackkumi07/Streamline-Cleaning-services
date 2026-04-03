@@ -1,0 +1,38 @@
+# Allow all crawlers including search engines and AI agents
+User-agent: *
+Allow: /
+Disallow: /admin
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# OpenAI GPTBot
+User-agent: GPTBot
+Allow: /
+
+# Anthropic ClaudeBot
+User-agent: ClaudeBot
+Allow: /
+
+# Common Crawl
+User-agent: CCBot
+Allow: /
+
+# Apple Applebot
+User-agent: Applebot
+Allow: /
+
+# Meta / Facebook
+User-agent: facebookexternalhit
+Allow: /
+
+# Twitter/X
+User-agent: Twitterbot
+Allow: /
+
+Sitemap: https://streamlinecleaning.com/sitemap.xml

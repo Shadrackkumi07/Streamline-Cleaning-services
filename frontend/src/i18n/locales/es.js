@@ -1,0 +1,130 @@
+﻿export default {
+  nav: {
+    home: 'Inicio',
+    services: 'Servicios',
+    booking: 'Reservar',
+    gallery: 'Galería',
+    reviews: 'Reseñas',
+    contact: 'Contacto',
+    schedule: 'Programar Limpieza'
+  },
+  hero: {
+    badge: 'Servicio de Limpieza Mejor Valorado',
+    title1: 'Espacios Limpios,',
+    title2: 'Mentes Claras.',
+    description: 'Experimente la alegría de regresar a un hogar impecable. Ofrecemos servicios de limpieza profesionales, confiables y meticulosos.',
+    bookNow: 'Reserve en Línea',
+    viewServices: 'Ver Servicios',
+    satisfaction: '100% Satisfacción',
+    guaranteed: 'Garantizada'
+  },
+  services: {
+    heading: 'Servicios de Limpieza para Cada Necesidad',
+    subheading: 'Desde mantenimiento rutinario hasta limpiezas profundas, tenemos un paquete que se adapta a su hogar y presupuesto.'
+  },
+  booking: {
+    heading: 'Reserve su Limpieza en Minutos',
+    subheading: 'Elija su servicio, seleccione fecha y hora, y nosotros nos encargamos del resto.',
+    step1: 'Paso 1: Servicio',
+    step2: 'Paso 2: Horario',
+    selectService: '¿Qué necesita?',
+    homeSize: 'Tamaño del Hogar',
+    homeSizePlaceholder: 'Seleccione tamaño...',
+    addOns: 'Extras (Opcional)',
+    continue: 'Continuar a Programación',
+    back: 'Atrás',
+    scheduleTitle: 'Elija Fecha y Hora',
+    scheduleDesc: 'Seleccione su fecha y hora preferidas. Sus selecciones de servicio han sido registradas.'
+  },
+  gallery: {
+    heading: 'Antes y Después',
+    subheading: 'Resultados reales de hogares reales.',
+    viewAll: 'Ver Galería Completa'
+  },
+  reviews: {
+    heading: 'Lo Que Dicen Nuestros Clientes',
+    subheading: 'Calificación 4.9 / 5 de más de 120+ reseñas.',
+    viewAll: 'Ver Todas las Reseñas',
+    leaveReview: 'Dejar una Reseña',
+    name: 'Su Nombre',
+    service: 'Servicio Utilizado',
+    rating: 'Calificación',
+    review: 'Su Reseña',
+    submit: 'Enviar Reseña',
+    successMsg: '¡Gracias por su reseña!'
+  },
+  contact: {
+    heading: 'Contáctenos',
+    subheading: '¿Tiene una solicitud especial o necesita un presupuesto personalizado?',
+    phone: 'Teléfono',
+    email: 'Correo',
+    location: 'Ubicación',
+    locationDetail: 'Sirviendo el Área Metropolitana',
+    hours: 'Lun-Sáb: 8am - 6pm',
+    firstName: 'Nombre',
+    lastName: 'Apellido',
+    emailAddress: 'Correo Electrónico',
+    message: 'Mensaje',
+    messagePlaceholder: '¿Cómo podemos ayudarle?',
+    send: 'Enviar Mensaje',
+    successMsg: '¡Mensaje enviado! Le responderemos pronto.'
+  },
+  footer: {
+    tagline: 'Espacios Limpios, Mentes Claras. Servicios de limpieza profesionales a su puerta.',
+    quickLinks: 'Enlaces Rápidos',
+    hoursTitle: 'Horario',
+    monFri: 'Lun - Dom',
+    monFriTime: '9:00 AM - 6:00 PM',
+    rights: '© {year} Streamline Cleaning Services. Todos los derechos reservados.',
+    terms: 'Términos',
+    privacy: 'Privacidad',
+    accessibility: 'Accesibilidad'
+  },
+  accessibility: {
+    heading: 'Declaración de Accesibilidad',
+    intro: 'Streamline Cleaning Services se compromete a garantizar la accesibilidad digital.',
+    standards: 'Estándares',
+    standardsText: 'Buscamos cumplir con las Pautas WCAG 2.1 Nivel AA.',
+    measures: 'Medidas Tomadas',
+    measure1: 'Estructura HTML semántica',
+    measure2: 'Contraste de color adecuado',
+    measure3: 'Navegación por teclado',
+    measure4: 'Texto alternativo para imágenes',
+    measure5: 'Diseño responsivo',
+    measure6: 'Enlace para saltar al contenido',
+    feedback: 'Comentarios',
+    feedbackText: 'Sus comentarios sobre accesibilidad son bienvenidos.'
+  },
+  terms: {
+    heading: 'Términos de Servicio',
+    lastUpdated: 'Última actualización: Enero 2026',
+    section1Title: '1. Aceptación de Términos',
+    section1Text: 'Al acceder y usar este sitio web, usted acepta estos términos.',
+    section2Title: '2. Servicios',
+    section2Text: 'Proporcionamos servicios de limpieza residencial y comercial.',
+    section3Title: '3. Reservas y Cancelaciones',
+    section3Text: 'Las cancelaciones deben hacerse al menos 24 horas antes.',
+    section4Title: '4. Privacidad',
+    section4Text: 'Su uso está gobernado por nuestra Política de Privacidad.',
+    section5Title: '5. Limitación de Responsabilidad',
+    section5Text: 'No seremos responsables de daños indirectos o consecuentes.',
+    section6Title: '6. Cambios',
+    section6Text: 'Nos reservamos el derecho de modificar estos términos.'
+  },
+  privacy: {
+    heading: 'Política de Privacidad',
+    lastUpdated: 'Última actualización: Enero 2026',
+    section1Title: '1. Información que Recopilamos',
+    section1Text: 'Recopilamos información que usted nos proporciona directamente.',
+    section2Title: '2. Uso de la Información',
+    section2Text: 'Usamos la información para proporcionar y mejorar nuestros servicios.',
+    section3Title: '3. Compartir Información',
+    section3Text: 'No vendemos su información personal a terceros.',
+    section4Title: '4. Seguridad de Datos',
+    section4Text: 'Implementamos medidas de seguridad estándar.',
+    section5Title: '5. Cookies',
+    section5Text: 'Nuestro sitio puede usar cookies.',
+    section6Title: '6. Contáctenos',
+    section6Text: 'Si tiene preguntas, contáctenos en {email}.'
+  }
+};

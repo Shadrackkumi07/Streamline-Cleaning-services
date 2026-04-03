@@ -1,0 +1,43 @@
+# Streamline Cleaning Services
+
+> Professional, reliable, and meticulous home and commercial cleaning tailored to your lifestyle. Book online in minutes.
+
+## About
+
+Streamline Cleaning Services provides residential and commercial cleaning across the United States. We offer flexible scheduling, transparent pricing, and a satisfaction guarantee.
+
+## Services
+
+- **Standard Clean** — Regular maintenance cleaning covering all main living areas, bathrooms, and kitchen surfaces. Ideal for weekly or bi-weekly visits. Starting at $85/visit.
+- **Deep Clean** — A thorough top-to-bottom clean including appliances, baseboards, window sills, and hard-to-reach areas. Starting at $165/visit.
+- **Move-In / Move-Out** — Full property cleaning for vacant homes including appliance and cabinet interiors. Starting at $195/visit.
+- **Commercial** — Office and commercial space cleaning with flexible scheduling including evenings and weekends. Custom pricing.
+
+## Add-On Services
+
+- Inside Fridge
+- Inside Oven
+- Laundry
+- Window Washing
+
+## Booking
+
+Clients can book directly at https://streamlinecleaning.com/booking by selecting a service, home size, and preferred add-ons, then choosing a time slot via our online scheduler.
+
+## Pages
+
+- [Home](https://streamlinecleaning.com/): Overview of services, gallery preview, reviews, and contact form.
+- [Book a Cleaning](https://streamlinecleaning.com/booking): Service selection and online scheduling.
+- [Client Reviews](https://streamlinecleaning.com/reviews): Verified client reviews with service filter. Clients may leave a review after their appointment.
+- [Gallery](https://streamlinecleaning.com/gallery): Before and after photos from residential and commercial jobs.
+- [Terms of Service](https://streamlinecleaning.com/terms): Service terms and conditions.
+- [Privacy Policy](https://streamlinecleaning.com/privacy): Data collection and privacy practices.
+- [Accessibility](https://streamlinecleaning.com/accessibility): Accessibility commitment statement.
+
+## Contact
+
+Contact form available at https://streamlinecleaning.com/#contact
+
+## Crawling Policy
+
+This site welcomes indexing by all web crawlers and AI agents. See /robots.txt for directives. See /sitemap.xml for a full page map.

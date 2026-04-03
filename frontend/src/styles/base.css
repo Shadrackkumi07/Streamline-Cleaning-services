@@ -1,0 +1,114 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #374151; background: #fff; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+#app { min-height: 100vh; display: flex; flex-direction: column; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0;
+  margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}
+
+.btn-pink {
+  background: #f472b6; color: #fff; padding: 0.625rem 1.5rem;
+  border-radius: 9999px; font-weight: 600; border: none; cursor: pointer;
+  transition: background .2s, box-shadow .2s, transform .2s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.btn-pink:hover { background: #ec4899; box-shadow: 0 6px 12px rgba(0,0,0,0.12); transform: translateY(-1px); }
+
+.btn-primary {
+  background: #f472b6; color: #fff; padding: 1rem 2rem;
+  border-radius: 9999px; font-weight: 700; font-size: 1.125rem;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: background .2s, box-shadow .2s;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1); border: none; cursor: pointer;
+}
+.btn-primary:hover { background: #ec4899; box-shadow: 0 12px 24px rgba(0,0,0,0.12); }
+
+.btn-outline {
+  background: #fff; color: #374151; border: 2px solid #e5e7eb;
+  padding: 1rem 2rem; border-radius: 9999px; font-weight: 700;
+  font-size: 1.125rem; display: inline-flex; align-items: center; gap: 8px;
+  transition: border-color .2s, color .2s; cursor: pointer;
+}
+.btn-outline:hover { border-color: #f472b6; color: #f472b6; }
+
+.btn-back {
+  padding: 0.75rem 1.5rem; border: 2px solid #e5e7eb;
+  border-radius: 9999px; font-weight: 700; color: #4b5563;
+  background: none; cursor: pointer; transition: background .2s;
+}
+.btn-back:hover { background: #f9fafb; }
+
+.btn-continue {
+  margin-left: auto; background: #f472b6; color: #fff;
+  padding: 0.75rem 2rem; border-radius: 9999px; font-weight: 700;
+  border: none; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: background .2s;
+}
+.btn-continue:hover:not(:disabled) { background: #ec4899; }
+.btn-continue:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btn-dark {
+  width: 100%; background: #1f2937; color: #fff; padding: 1rem;
+  border-radius: 0.75rem; font-weight: 700; font-size: 1rem;
+  border: none; cursor: pointer; transition: background .2s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-top: 1rem;
+}
+.btn-dark:hover { background: #111827; }
+
+.section-header { text-align: center; margin-bottom: 3rem; }
+.section-header h2 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 900; color: #1f2937;
+}
+.section-header p {
+  margin-top: 1rem; font-size: 1.125rem; color: #6b7280;
+  max-width: 600px; margin-left: auto; margin-right: auto;
+}
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group { margin-bottom: 1.5rem; margin-top: 1.5rem; }
+.form-group label {
+  display: block; font-size: 0.875rem; font-weight: 600;
+  color: #374151; margin-bottom: 0.5rem; text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+input[type=text], input[type=email], input[type=tel], input[type=date],
+select, textarea {
+  width: 100%; padding: 0.75rem 1rem; border: 1px solid #e5e7eb;
+  border-radius: 0.75rem; font-size: 1rem; color: #374151;
+  outline: none; transition: border-color .2s, box-shadow .2s;
+  font-family: inherit; background: #fff;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: #f472b6; box-shadow: 0 0 0 3px rgba(244,114,182,0.15);
+}
+textarea { resize: vertical; }
+
+.checkbox-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.checkbox-item {
+  display: flex; align-items: center; gap: 0.75rem;
+  cursor: pointer; color: #4b5563; font-weight: 500; font-size: 0.95rem;
+}
+.checkbox-item input[type="checkbox"] {
+  width: 18px; height: 18px; accent-color: #f472b6; cursor: pointer;
+}
+
+.radio-label {
+  display: flex; align-items: center; padding: 1rem;
+  border: 2px solid #f3f4f6; border-radius: 1rem; cursor: pointer;
+  margin-bottom: 0.75rem; transition: all .2s;
+}
+.radio-label:hover { border-color: #fbcfe8; }
+.radio-label.selected { border-color: #f472b6; background: #fdf2f8; }
+.radio-label input { width: 20px; height: 20px; accent-color: #f472b6; }
+.radio-label span { margin-left: 1rem; font-weight: 600; color: #374151; }
+
+.container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+
+@media (max-width: 768px) {
+  .form-row, .checkbox-grid { grid-template-columns: 1fr; }
+}
