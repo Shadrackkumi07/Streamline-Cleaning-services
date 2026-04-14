@@ -28,6 +28,16 @@
           <select class="lang-select" :value="locale" @change="switchLocale($event.target.value)" aria-label="Language">
             <option v-for="l in supportedLocales" :key="l.code" :value="l.code">{{ l.label }}</option>
           </select>
+          <div class="built-by">
+            <span>Built by <strong>Shark Labs</strong></span>
+            <span class="divider">•</span>
+            <span>Let's connect</span>
+            <a href="https://www.linkedin.com/in/shadrack-kumi-/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </a>
+          </div>
           <button class="hamburger" @click="menuOpen = !menuOpen" :aria-label="menuOpen ? 'Close menu' : 'Open menu'">
             <svg v-if="!menuOpen" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
             <svg v-else xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
@@ -48,6 +58,16 @@
           <button class="btn-pink" style="width:100%;margin-top:0.5rem" @click="menuOpen = false; $router.push({ name: 'booking' })">
             {{ $t('nav.schedule') }}
           </button>
+          <div class="built-by mobile-built-by">
+            <span>Built by <strong>Shark Labs</strong></span>
+            <span class="divider">•</span>
+            <span>Let's connect</span>
+            <a href="https://www.linkedin.com/in/shadrack-kumi-/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </nav>
@@ -132,6 +152,16 @@ nav {
   padding: 4px 8px; border-radius: 6px; border: 1px solid #e5e7eb;
   font-size: 0.8rem; color: #4b5563; background: #fff; cursor: pointer;
 }
+.built-by {
+  font-size: 0.75rem; color: #6b7280; display: flex; align-items: center; gap: 0.5rem;
+  white-space: nowrap; margin-left: 0.75rem; padding-left: 0.75rem; border-left: 1px solid #e5e7eb;
+}
+.built-by strong { color: #374151; font-weight: 600; }
+.divider { color: #d1d5db; }
+.built-by a {
+  color: #0077b5; display: inline-flex; transition: opacity 0.2s; align-items: center;
+}
+.built-by a:hover { opacity: 0.8; }
 .hamburger { display: none; background: none; border: none; cursor: pointer; color: #4b5563; }
 .mobile-menu {
   display: none; background: #fff; border-top: 1px solid #f3f4f6;
@@ -144,6 +174,11 @@ nav {
 }
 .mobile-menu a:hover { color: #f472b6; background: #fdf2f8; }
 .mobile-lang { width: 100%; margin-top: 0.5rem; }
+.mobile-built-by {
+  display: flex !important; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #e5e7eb;
+  border-left: none; margin-left: 0;
+  justify-content: center; font-size: 0.75rem; color: #6b7280; white-space: normal; text-align: center;
+}
 
 footer {
   background: #1f2937; padding: 4rem 1.5rem 2rem; margin-top: auto;
@@ -180,6 +215,7 @@ footer {
 
 @media (max-width: 1024px) {
   .nav-cta { display: none; }
+  .built-by { display: none; }
 }
 @media (max-width: 768px) {
   .nav-links, .nav-cta { display: none; }
