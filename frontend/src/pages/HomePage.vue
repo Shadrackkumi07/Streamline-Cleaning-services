@@ -6,7 +6,7 @@
       <div class="hero-inner">
         <div class="hero-left">
           <div class="hero-badge">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+            <img src="https://img.icons8.com/plasticine/100/cleaning-services.png" alt="Top Rated Cleaning Service badge" loading="lazy" />
             {{ $t('hero.badge') }}
           </div>
           <h1>{{ $t('hero.title1') }}<br/><span>{{ $t('hero.title2') }}</span></h1>
@@ -46,10 +46,7 @@
       <div class="services-grid">
         <div v-for="svc in services" :key="svc.id" class="service-card">
           <div class="service-icon">
-            <svg v-if="svc.icon === 'broom'" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M2.5 21h19"/><path d="M8.5 7A3.5 3.5 0 0 0 5 10.5V21"/><path d="M15.5 7A3.5 3.5 0 0 1 19 10.5V21"/><path d="M12 2v19"/></svg>
-            <svg v-else-if="svc.icon === 'sparkles'" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
-            <svg v-else-if="svc.icon === 'box'" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-            <svg v-else xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>
+            <img :src="serviceBadgeUrls[svc.icon] || serviceBadgeUrls.building" :alt="`${svc.name} badge`" loading="lazy" />
           </div>
           <h3>{{ svc.name }}</h3>
           <p>{{ svc.description }}</p>
@@ -64,31 +61,65 @@
         <h2>{{ $t('gallery.heading') }}</h2>
         <p>{{ $t('gallery.subheading') }}</p>
       </div>
-      <div class="gallery-grid">
-        <div
-          v-for="item in galleryItems"
-          :key="item.id"
-          class="gallery-item"
-          :class="{ tall: item.tall }"
-          @click="$router.push({ name: 'gallery' })"
-          role="button"
-          tabindex="0"
-          @keydown.enter="$router.push({ name: 'gallery' })"
-        >
-          <img :src="item.src" :alt="item.alt" loading="lazy" />
-          <div class="gallery-overlay">
-            <div class="gallery-overlay-text">
-              <p>{{ item.title }}</p>
-              <span>{{ item.tag }}</span>
+      <div class="before-after-cases">
+        <article v-for="caseItem in beforeAfterCases" :key="caseItem.id" class="before-after-case">
+          <div class="case-top">
+            <h3>{{ caseItem.title }}</h3>
+            <p>Before and after transformation</p>
+          </div>
+          <div class="case-columns">
+            <div class="case-column">
+              <p class="case-label before">BEFORE</p>
+              <div class="case-image-grid">
+                <button
+                  v-for="item in caseItem.before"
+                  :key="item.id"
+                  class="case-image"
+                  @click="openGalleryPreview(item)"
+                  :aria-label="`${item.title} - preview image`"
+                >
+                  <img :src="item.src" :alt="item.alt" loading="lazy" />
+                  <span class="case-image-hint">View</span>
+                </button>
+              </div>
+            </div>
+            <div class="case-divider" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m5 12 14 0"/><path d="m13 6 6 6-6 6"/></svg>
+            </div>
+            <div class="case-column">
+              <p class="case-label after">AFTER</p>
+              <div class="case-image-grid">
+                <button
+                  v-for="item in caseItem.after"
+                  :key="item.id"
+                  class="case-image"
+                  @click="openGalleryPreview(item)"
+                  :aria-label="`${item.title} - preview image`"
+                >
+                  <img :src="item.src" :alt="item.alt" loading="lazy" />
+                  <span class="case-image-hint">View</span>
+                </button>
+              </div>
             </div>
           </div>
-        </div>
+        </article>
       </div>
       <button class="gallery-btn" @click="$router.push({ name: 'gallery' })">
         {{ $t('gallery.viewAll') }}
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
       </button>
     </section>
+
+    <div
+      v-if="galleryPreviewItem"
+      class="case-preview-lightbox"
+      @click.self="galleryPreviewItem = null"
+      @keydown.escape="galleryPreviewItem = null"
+      tabindex="0"
+    >
+      <button class="case-preview-close" @click="galleryPreviewItem = null" aria-label="Close image preview">&times;</button>
+      <img :src="galleryPreviewItem.src" :alt="galleryPreviewItem.alt" class="case-preview-image" />
+    </div>
 
     <!-- Reviews Preview -->
     <section id="reviews" class="reviews-section">
@@ -130,11 +161,11 @@
           <p>{{ $t('contact.subheading') }}</p>
           <div class="contact-item">
             <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#f472b6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.56 3.18 2 2 0 0 1 3.54 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.57a16 16 0 0 0 6.29 6.29l.87-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-            <div><h4>{{ $t('contact.phone') }}</h4><p>(555) 123-4567</p></div>
+            <div><h4>{{ $t('contact.phone') }}</h4><p>(701) 205-6280</p></div>
           </div>
           <div class="contact-item">
             <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#f472b6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-            <div><h4>{{ $t('contact.email') }}</h4><p>hello@streamlinecleaning.com</p></div>
+            <div><h4>{{ $t('contact.email') }}</h4><p>contact@streamlinecleaningservices.com</p></div>
           </div>
           <div class="contact-item">
             <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#f472b6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
@@ -173,30 +204,43 @@
 
 <script setup>
 import { ref, reactive, onMounted } from 'vue';
-import { services, galleryItems } from '../data/services.js';
+import { services, beforeAfterCases } from '../data/services.js';
 import useReviews from '../composables/useReviews.js';
 import { sanitizeInput, validateEmail } from '../utils/security.js';
 
 const { reviews, loadReviews } = useReviews();
 
+const reviewImageUrls = [
+  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170734/IMG_2697_fy0zuw.jpg',
+  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170736/IMG_9284_ss1ngl.jpg',
+  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170729/IMG_0706_uuzmf4.jpg'
+];
+
 const seedReviews = [
-  { name: 'Sarah M.', rating: '5.0', text: 'Absolutely incredible service. My kitchen has never looked this good — they even cleaned inside the oven without me asking. Will be booking monthly from now on!', service: 'Deep Cleaning', image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' },
-  { name: 'Jessica T.', rating: '5.0', text: 'Booking online was so easy and they showed up right on time. Professional, thorough, and friendly. My apartment sparkles after every visit!', service: 'Standard Cleaning', image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' },
-  { name: 'David R.', rating: '4.9', text: 'Used them for a move-out clean and got my full deposit back. The landlord was shocked at how clean it was. Cannot recommend Streamline enough!', service: 'Move-Out Cleaning', image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' }
+  { name: 'Sarah M.', rating: '5.0', text: 'Absolutely incredible service. My kitchen has never looked this good — they even cleaned inside the oven without me asking. Will be booking monthly from now on!', service: 'Deep Cleaning', image: reviewImageUrls[0] },
+  { name: 'Jessica T.', rating: '5.0', text: 'Booking online was so easy and they showed up right on time. Professional, thorough, and friendly. My apartment sparkles after every visit!', service: 'Standard Cleaning', image: reviewImageUrls[1] },
+  { name: 'David R.', rating: '4.9', text: 'Used them for a move-out clean and got my full deposit back. The landlord was shocked at how clean it was. Cannot recommend Streamline enough!', service: 'Move-Out Cleaning', image: reviewImageUrls[2] }
 ];
 
 const displayedReviews = ref(seedReviews);
+const galleryPreviewItem = ref(null);
+const serviceBadgeUrls = {
+  broom: 'https://img.icons8.com/matisse/100/broom.png',
+  sparkles: 'https://img.icons8.com/hands/100/eco-cleaning.png',
+  box: 'https://img.icons8.com/emoji/48/package-.png',
+  building: 'https://img.icons8.com/plasticine/100/building.png'
+};
 
 onMounted(async () => {
   try {
     await loadReviews();
     if (reviews.value.length) {
-      displayedReviews.value = reviews.value.slice(0, 3).map((r) => ({
+      displayedReviews.value = reviews.value.slice(0, 3).map((r, index) => ({
         name: r.name,
         rating: r.rating,
         text: r.text,
         service: r.service,
-        image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+        image: reviewImageUrls[index] || reviewImageUrls[reviewImageUrls.length - 1]
       }));
     }
   } catch {
@@ -210,6 +254,10 @@ const contactSubmitting = ref(false);
 const contactSuccess = ref(false);
 
 const API_URL = import.meta.env?.VITE_CONTACT_API || '';
+
+function openGalleryPreview(item) {
+  galleryPreviewItem.value = item;
+}
 
 async function handleContact() {
   if (honeypot.value) return;
@@ -250,6 +298,7 @@ async function handleContact() {
 .hero-inner { max-width: 1280px; margin: 0 auto; padding: 5rem 1.5rem 6rem; display: flex; align-items: center; gap: 3rem; position: relative; z-index: 1; }
 .hero-left { flex: 1; }
 .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 9999px; background: #fce7f3; color: #ec4899; font-size: 0.875rem; font-weight: 600; margin-bottom: 1.5rem; }
+.hero-badge img { width: 24px; height: 24px; object-fit: contain; }
 h1 { font-size: clamp(2.2rem, 5vw, 3.75rem); font-weight: 900; color: #1f2937; line-height: 1.15; margin-bottom: 1.5rem; }
 h1 span { color: #f472b6; }
 .hero-desc { font-size: 1.125rem; color: #6b7280; margin-bottom: 2rem; max-width: 560px; line-height: 1.7; }
@@ -269,22 +318,66 @@ h1 span { color: #f472b6; }
 .services-grid { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
 .service-card { background: #f9fafb; border-radius: 1.5rem; padding: 2.5rem 2rem; box-shadow: 0 4px 16px rgba(0,0,0,0.04); border: 2px solid transparent; transition: all .3s; }
 .service-card:hover { transform: translateY(-4px); border-color: #fbcfe8; background: #fff; box-shadow: 0 12px 24px rgba(0,0,0,0.08); }
-.service-icon { width: 56px; height: 56px; background: #fce7f3; color: #f472b6; border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; }
+.service-icon { width: 64px; height: 64px; background: #fce7f3; border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; }
+.service-icon img { width: 44px; height: 44px; object-fit: contain; }
 .service-card h3 { font-size: 1.25rem; font-weight: 700; color: #1f2937; margin-bottom: 0.75rem; }
 .service-card p { color: #6b7280; line-height: 1.6; margin-bottom: 1.5rem; }
 .service-price { font-size: 1.75rem; font-weight: 800; color: #ec4899; }
 .service-price span { font-size: 0.875rem; font-weight: 500; color: #9ca3af; }
 
-.gallery-section { padding: 6rem 1.5rem; background: #fff; }
-.gallery-grid { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 250px; gap: 1.5rem; }
-.gallery-item { border-radius: 1.5rem; overflow: hidden; position: relative; background: #f3f4f6; cursor: pointer; }
-.gallery-item.tall { grid-row: span 2; }
-.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
-.gallery-item:hover img { transform: scale(1.05); }
-.gallery-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%); opacity: 0; transition: opacity .3s; display: flex; align-items: flex-end; padding: 1.5rem; }
-.gallery-item:hover .gallery-overlay { opacity: 1; }
-.gallery-overlay-text p { color: #fff; font-weight: 700; font-size: 1.125rem; }
-.gallery-overlay-text span { color: #fbcfe8; font-size: 0.875rem; font-weight: 500; }
+.gallery-section { padding: 6rem 1.5rem; background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%); }
+.before-after-cases { max-width: 1400px; margin: 0 auto; display: grid; gap: 4rem; }
+.before-after-case { background: transparent; padding: 0 1rem; }
+.case-top { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 0.5rem; margin-bottom: 2.5rem; }
+.case-top h3 { margin: 0; color: #111827; font-size: 2.2rem; font-weight: 900; letter-spacing: -0.02em; }
+.case-top p { margin: 0; color: #f472b6; font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
+.case-columns { display: grid; grid-template-columns: 1fr auto 1fr; gap: 2rem; align-items: start; max-width: 1100px; margin: 0 auto; }
+.case-divider { display: flex; flex-direction: column; align-items: center; justify-content: center; color: #cbd5e1; margin-top: 3rem; gap: 1rem; }
+.case-divider::before, .case-divider::after { content: ''; width: 2px; height: 60px; background: linear-gradient(to bottom, transparent, #e2e8f0, transparent); }
+.case-divider svg { background: #ffffff; color: #94a3b8; border: 2px solid #f1f5f9; border-radius: 50%; width: 48px; height: 48px; padding: 10px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+.case-column { background: transparent; padding: 0; border: none; }
+.case-label { display: block; border-radius: 9999px; padding: 0.5rem 1rem; font-size: 0.85rem; font-weight: 800; letter-spacing: 0.1em; text-align: center; margin: 0 auto 1.5rem; max-width: max-content; }
+.case-label.before { color: #b91c1c; background: #fee2e2; border: 1px solid #fecaca; }
+.case-label.after { color: #15803d; background: #dcfce7; border: 1px solid #bbf7d0; }
+.case-image-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; align-items: stretch; justify-content: center; }
+.case-image { border: none; padding: 0; margin: 0; border-radius: 1.25rem; overflow: hidden; cursor: pointer; background: #f1f5f9; position: relative; aspect-ratio: 4/5; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); width: 100%; }
+.case-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(0.4, 0, 0.2, 1); display: block; }
+.case-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(15, 23, 42, 0.48), rgba(15, 23, 42, 0.03) 55%); opacity: 0; transition: opacity .2s; }
+.case-image-hint { position: absolute; right: 0.6rem; bottom: 0.55rem; z-index: 1; color: #fff; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.03em; opacity: 0; transition: opacity .2s; }
+.case-image:hover img { transform: scale(1.06); }
+.case-image:hover::after, .case-image:hover .case-image-hint { opacity: 1; }
+.case-image:focus-visible { outline: 3px solid #f472b6; outline-offset: 3px; }
+.case-preview-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  background: rgba(2, 6, 23, 0.86);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.case-preview-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  border: none;
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  border-radius: 9999px;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.case-preview-image {
+  width: min(900px, 92vw);
+  max-height: 88vh;
+  border-radius: 1rem;
+  object-fit: contain;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
+}
 .gallery-btn { display: flex; align-items: center; gap: 8px; color: #ec4899; font-weight: 700; background: none; border: none; cursor: pointer; font-size: 1rem; transition: color .2s; margin: 3rem auto 0; }
 .gallery-btn:hover { color: #db2777; }
 
@@ -312,14 +405,79 @@ h1 span { color: #f472b6; }
 .contact-form { flex: 1; background: #f9fafb; padding: 2.5rem; border-radius: 1.5rem; border: 1px solid #f3f4f6; }
 
 @media (max-width: 1024px) {
-  .hero-inner { flex-direction: column; }
+  .hero-inner { flex-direction: column; padding: 4rem 1.25rem 5rem; gap: 2rem; }
   .hero-right { width: 100%; margin-top: 2rem; }
+  .hero-badge-float { left: 1rem; bottom: -1rem; }
   .contact-inner { flex-direction: column; }
   .contact-left { flex: none; }
 }
 @media (max-width: 768px) {
-  .reviews-grid, .services-grid { grid-template-columns: 1fr; }
-  .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 200px; }
-  .gallery-item.tall { grid-row: span 1; }
+  .hero { border-bottom: 1px solid #f1f5f9; }
+  .hero-inner { padding: 3.25rem 1rem 4rem; }
+  .hero-badge { font-size: 0.8rem; padding: 6px 12px; margin-bottom: 1rem; }
+  h1 { font-size: clamp(1.9rem, 9vw, 2.45rem); margin-bottom: 1rem; }
+  .hero-desc { font-size: 1rem; line-height: 1.6; margin-bottom: 1.25rem; }
+  .hero-btns { width: 100%; gap: 0.75rem; }
+  .hero-btns :deep(a),
+  .hero-btns :deep(.btn-primary) {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+  .hero-img-wrap { border-radius: 1.1rem; }
+  .hero-img-wrap img { min-height: 280px; object-fit: cover; }
+  .hero-badge-float {
+    position: static;
+    margin-top: 0.9rem;
+    width: 100%;
+    justify-content: center;
+    animation: none;
+  }
+
+  .services-section,
+  .gallery-section,
+  .reviews-section,
+  .contact-section { padding: 4rem 1rem; }
+
+  .services-grid,
+  .reviews-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+  .service-card { padding: 1.6rem 1.2rem; border-radius: 1.1rem; }
+  .service-icon { width: 56px; height: 56px; margin-bottom: 1rem; }
+  .service-icon img { width: 36px; height: 36px; }
+
+  .before-after-cases { gap: 2.4rem; }
+  .before-after-case { padding: 0; }
+  .case-top { flex-direction: column; align-items: center; text-align: center; margin-bottom: 1.1rem; }
+  .case-top h3 { font-size: 1.6rem; }
+  .case-top p { font-size: 0.82rem; letter-spacing: 0.08em; }
+  .case-columns { grid-template-columns: 1fr; }
+  .case-divider { display: none; }
+  .case-image-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.65rem; }
+  .case-image { width: 100%; border-radius: 0.9rem; }
+  .case-label { margin-bottom: 0.85rem; }
+  .gallery-btn { margin-top: 2rem; }
+
+  .review-img { height: 170px; }
+  .review-body { padding: 1rem; }
+  .review-body p { font-size: 0.95rem; line-height: 1.5; }
+
+  .contact-inner { gap: 2rem; }
+  .contact-left h2 { font-size: 1.55rem; margin-bottom: 1rem; }
+  .contact-item { margin-bottom: 1rem; }
+  .contact-item p { line-height: 1.5; }
+  .contact-form { padding: 1.2rem 1rem; border-radius: 1rem; }
+  .form-row { display: grid; grid-template-columns: 1fr; gap: 0.85rem; }
+}
+
+@media (max-width: 430px) {
+  .hero-inner { padding: 2.8rem 0.85rem 3.4rem; }
+  .hero-badge { width: 100%; justify-content: center; }
+  .services-section,
+  .gallery-section,
+  .reviews-section,
+  .contact-section { padding: 3.4rem 0.85rem; }
+  .case-image-grid { grid-template-columns: 1fr; }
+  .case-preview-lightbox { padding: 0.85rem; }
+  .case-preview-close { width: 40px; height: 40px; top: 0.8rem; right: 0.8rem; }
 }
 </style>

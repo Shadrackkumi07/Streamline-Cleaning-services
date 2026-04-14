@@ -16,7 +16,7 @@
 import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n();
-const contactEmail = 'hello@streamlinecleaning.com';
+const contactEmail = 'contact@streamlinecleaningservices.com';
 
 const getPrivacySectionText = (index) => {
   if (index === 6) {

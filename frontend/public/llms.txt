@@ -1,10 +1,10 @@
 # Streamline Cleaning Services
 
-> Professional, reliable, and meticulous home and commercial cleaning tailored to your lifestyle. Book online in minutes.
+> Top-rated home and commercial cleaning across North Dakota and Minnesota. Book online in minutes.
 
 ## About
 
-Streamline Cleaning Services provides residential and commercial cleaning across the United States. We offer flexible scheduling, transparent pricing, and a satisfaction guarantee.
+Streamline Cleaning Services provides residential and commercial cleaning across North Dakota and Minnesota. We offer flexible scheduling, transparent pricing, and a satisfaction guarantee.
 
 ## Services
 
@@ -24,6 +24,11 @@ Streamline Cleaning Services provides residential and commercial cleaning across
 
 Clients can book directly at https://streamlinecleaning.com/booking by selecting a service, home size, and preferred add-ons, then choosing a time slot via our online scheduler.
 
+## Service Area
+
+- North Dakota
+- Minnesota
+
 ## Pages
 
 - [Home](https://streamlinecleaning.com/): Overview of services, gallery preview, reviews, and contact form.
@@ -36,8 +41,16 @@ Clients can book directly at https://streamlinecleaning.com/booking by selecting
 
 ## Contact
 
-Contact form available at https://streamlinecleaning.com/#contact
+- Contact form: https://streamlinecleaning.com/#contact
+- Email: contact@streamlinecleaningservices.com
+- Phone: +1 701 205 6280
+- Hours: Mon - Sun 9:00 AM - 6:00 PM
 
 ## Crawling Policy
 
-This site welcomes indexing by all web crawlers and AI agents. See /robots.txt for directives. See /sitemap.xml for a full page map.
+This site welcomes indexing by search engines and AI crawlers for all public pages.
+
+- Allowed: /, /booking, /reviews, /gallery, /terms, /privacy, /accessibility
+- Disallowed: /admin
+- Canonical sitemap: https://streamlinecleaning.com/sitemap.xml
+- Robots policy: https://streamlinecleaning.com/robots.txt

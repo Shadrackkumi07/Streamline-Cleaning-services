@@ -1,38 +1,40 @@
-# Allow all crawlers including search engines and AI agents
+# Streamline Cleaning Services crawl policy
 User-agent: *
 Allow: /
 Disallow: /admin
 
-# Google
+# Major search crawlers
 User-agent: Googlebot
 Allow: /
 
-# Bing
 User-agent: Bingbot
 Allow: /
 
-# OpenAI GPTBot
-User-agent: GPTBot
-Allow: /
-
-# Anthropic ClaudeBot
-User-agent: ClaudeBot
-Allow: /
-
-# Common Crawl
-User-agent: CCBot
-Allow: /
-
-# Apple Applebot
 User-agent: Applebot
 Allow: /
 
-# Meta / Facebook
+# AI and research crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Social preview crawlers
 User-agent: facebookexternalhit
 Allow: /
 
-# Twitter/X
 User-agent: Twitterbot
 Allow: /
 
+Host: streamlinecleaning.com
 Sitemap: https://streamlinecleaning.com/sitemap.xml

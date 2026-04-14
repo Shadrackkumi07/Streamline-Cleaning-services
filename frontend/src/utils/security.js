@@ -59,6 +59,11 @@ export function applyPageMeta(route) {
     ? rawTitle === titleBase ? titleBase : `${rawTitle} | ${titleBase}`
     : titleBase;
   const description = route.meta?.description || 'Professional cleaning services tailored to your lifestyle.';
+  const defaultKeywords = 'cleaning services, house cleaning, deep cleaning, move out cleaning, commercial cleaning, fargo cleaning, west fargo cleaning, north dakota cleaning, minnesota cleaning';
+  const keywords = route.meta?.keywords || defaultKeywords;
+  const robotsDirectives = route.meta?.noIndex
+    ? 'noindex, nofollow, noarchive'
+    : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
 
   document.title = pageTitle;
 
@@ -89,18 +94,24 @@ export function applyPageMeta(route) {
     return cleanPath.endsWith('/') ? cleanPath.slice(0, -1) : cleanPath;
   };
 
-  const canonicalPath = normalizePath(route?.path || window.location.pathname);
-  const canonicalUrl = `${window.location.origin}${canonicalPath === '/' ? '/' : canonicalPath}`;
+  const siteOrigin = String(import.meta.env?.VITE_SITE_URL || 'https://streamlinecleaning.com').replace(/\/+$/, '');
+  const canonicalPath = normalizePath(route?.fullPath || window.location.pathname);
+  const canonicalUrl = `${siteOrigin}${canonicalPath === '/' ? '/' : canonicalPath}`;
 
-  const ogImage = route.meta?.ogImage || `${window.location.origin}/logo.png`;
+  const ogImage = route.meta?.ogImage || `${siteOrigin}/logo.png`;
+  const locale = (document.documentElement.getAttribute('lang') || 'en').replace('_', '-');
 
   ensureMeta('name', 'description', description);
-  ensureMeta('name', 'robots', route.meta?.noIndex ? 'noindex, nofollow' : 'index, follow');
+  ensureMeta('name', 'keywords', keywords);
+  ensureMeta('name', 'robots', robotsDirectives);
+  ensureMeta('name', 'googlebot', robotsDirectives);
+  ensureMeta('name', 'bingbot', robotsDirectives);
   ensureMeta('property', 'og:title', pageTitle);
   ensureMeta('property', 'og:description', description);
   ensureMeta('property', 'og:type', route.meta?.ogType || 'website');
   ensureMeta('property', 'og:url', canonicalUrl);
   ensureMeta('property', 'og:image', ogImage);
+  ensureMeta('property', 'og:locale', locale);
   ensureMeta('property', 'og:image:width', '400');
   ensureMeta('property', 'og:image:height', '400');
   ensureMeta('property', 'og:image:alt', 'Streamline Cleaning Services logo');
@@ -110,6 +121,7 @@ export function applyPageMeta(route) {
   ensureMeta('name', 'twitter:title', pageTitle);
   ensureMeta('name', 'twitter:description', description);
   ensureMeta('name', 'twitter:image', ogImage);
+  ensureMeta('name', 'twitter:url', canonicalUrl);
 
   ensureLink('canonical', canonicalUrl);
 }

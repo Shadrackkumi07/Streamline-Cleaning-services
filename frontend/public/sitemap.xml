@@ -5,7 +5,7 @@
 
   <url>
     <loc>https://streamlinecleaning.com/</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -16,7 +16,7 @@
 
   <url>
     <loc>https://streamlinecleaning.com/booking</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -27,7 +27,7 @@
 
   <url>
     <loc>https://streamlinecleaning.com/reviews</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -38,40 +38,40 @@
 
   <url>
     <loc>https://streamlinecleaning.com/gallery</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&amp;fit=crop&amp;w=600&amp;q=80</image:loc>
+      <image:loc>https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170734/IMG_2697_fy0zuw.jpg</image:loc>
       <image:title>Commercial Space Deep Clean — Streamline Cleaning Services</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&amp;fit=crop&amp;w=600&amp;q=80</image:loc>
+      <image:loc>https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170736/IMG_9284_ss1ngl.jpg</image:loc>
       <image:title>Spotless Kitchen — Streamline Cleaning Services</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&amp;fit=crop&amp;w=600&amp;q=80</image:loc>
+      <image:loc>https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170729/IMG_0706_uuzmf4.jpg</image:loc>
       <image:title>Pristine Bathroom Detail — Streamline Cleaning Services</image:title>
     </image:image>
   </url>
 
   <url>
     <loc>https://streamlinecleaning.com/terms</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
     <loc>https://streamlinecleaning.com/privacy</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
     <loc>https://streamlinecleaning.com/accessibility</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

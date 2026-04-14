@@ -8,8 +8,9 @@ const routes = [
     name: 'home',
     component: HomePage,
     meta: {
-      title: 'Streamline Cleaning Services | Professional Home & Commercial Cleaning',
-      description: 'Professional, reliable, and meticulous home and commercial cleaning tailored to your lifestyle. Standard, deep, move-in/out, and commercial packages available.',
+      title: 'House Cleaning in North Dakota & Minnesota',
+      description: 'Trusted home and commercial cleaning in North Dakota and Minnesota. Book standard, deep, move-in/out, and commercial cleaning online in minutes.',
+      keywords: 'fargo cleaning services, west fargo cleaning services, house cleaning fargo, house cleaning west fargo, deep cleaning services, move out cleaning, commercial cleaning',
       ogType: 'website',
       ogImage: 'https://streamlinecleaning.com/logo.png'
     }
@@ -19,8 +20,9 @@ const routes = [
     name: 'booking',
     component: () => import('../pages/BookingPage.vue'),
     meta: {
-      title: 'Book a Cleaning',
-      description: 'Schedule your professional cleaning service in minutes. Choose your service, home size, and add-ons, then pick a time that works for you.',
+      title: 'Book a Cleaning Appointment',
+      description: 'Book cleaning services online for homes and businesses in North Dakota and Minnesota. Select service type, details, and your preferred schedule.',
+      keywords: 'book cleaning fargo, book cleaning west fargo, schedule house cleaning fargo, schedule house cleaning west fargo, north dakota cleaners, minnesota cleaners',
       ogType: 'website',
       ogImage: 'https://streamlinecleaning.com/logo.png'
     }
@@ -30,8 +32,9 @@ const routes = [
     name: 'reviews',
     component: () => import('../pages/ReviewsPage.vue'),
     meta: {
-      title: 'Client Reviews',
-      description: 'Read real reviews from satisfied Streamline Cleaning Services clients. Leave your own review after your service.',
+      title: 'Cleaning Service Reviews',
+      description: 'Read verified customer reviews for Streamline Cleaning Services across North Dakota and Minnesota.',
+      keywords: 'fargo cleaning reviews, west fargo cleaning reviews, cleaning service reviews, house cleaner reviews, north dakota cleaning reviews, minnesota cleaning reviews',
       ogType: 'website',
       ogImage: 'https://streamlinecleaning.com/logo.png'
     }
@@ -41,8 +44,9 @@ const routes = [
     name: 'gallery',
     component: () => import('../pages/GalleryPage.vue'),
     meta: {
-      title: 'Gallery',
-      description: 'Before and after photos showcasing the Streamline Cleaning Services difference. See our work across residential and commercial spaces.',
+      title: 'Before and After Cleaning Gallery',
+      description: 'Explore before and after cleaning photos from real residential and commercial cleaning jobs completed by Streamline Cleaning Services.',
+      keywords: 'fargo cleaning gallery, west fargo cleaning gallery, cleaning gallery, before and after cleaning photos, deep cleaning results, move out cleaning photos',
       ogType: 'website',
       ogImage: 'https://streamlinecleaning.com/logo.png'
     }
@@ -54,6 +58,7 @@ const routes = [
     meta: {
       title: 'Terms of Service',
       description: 'Terms and conditions governing use of Streamline Cleaning Services.',
+      keywords: 'cleaning terms of service, booking terms, service policies',
       ogType: 'website'
     }
   },
@@ -64,6 +69,7 @@ const routes = [
     meta: {
       title: 'Privacy Policy',
       description: 'How Streamline Cleaning Services collects, uses, and protects your personal information.',
+      keywords: 'privacy policy, cleaning service privacy, customer data privacy',
       ogType: 'website'
     }
   },
@@ -74,6 +80,7 @@ const routes = [
     meta: {
       title: 'Accessibility Statement',
       description: 'Our commitment to making streamlinecleaning.com accessible to everyone.',
+      keywords: 'accessibility statement, wcag compliance, accessible cleaning website',
       ogType: 'website'
     }
   },
@@ -84,6 +91,7 @@ const routes = [
     meta: {
       title: 'Admin',
       description: 'Admin review management.',
+      keywords: 'admin',
       ogType: 'website',
       noIndex: true
     }
@@ -95,6 +103,7 @@ const routes = [
     meta: {
       title: 'Page Not Found',
       description: 'The page you are looking for does not exist.',
+      keywords: '404',
       ogType: 'website',
       noIndex: true
     }

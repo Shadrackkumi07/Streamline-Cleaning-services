@@ -6,8 +6,8 @@ const csp = [
   "default-src 'self'",
   "script-src 'self' 'unsafe-eval'",
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-  // Allow local uploaded images from the backend dev server
-  "img-src 'self' data: https://images.unsplash.com http://localhost:5000",
+  // Allow local uploads, Cloudinary-hosted gallery images, and Icons8 badges
+  "img-src 'self' data: https://images.unsplash.com https://res.cloudinary.com https://img.icons8.com http://localhost:5000",
   "font-src 'self' data: https://fonts.gstatic.com",
   // Allow backend API calls in dev; production _headers will add the Render URL
   "connect-src 'self' ws: wss: http://localhost:5173 http://localhost:5000",
