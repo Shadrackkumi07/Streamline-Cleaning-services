@@ -101,7 +101,19 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <p>{{ $t('footer.rights', { year: currentYear }) }}</p>
+          <div class="footer-bottom-info">
+            <p>{{ $t('footer.rights', { year: currentYear }) }}</p>
+            <div class="footer-built-by">
+              <span>Built by <strong>Shark Labs</strong></span>
+              <span class="footer-divider">•</span>
+              <span>Let's connect</span>
+              <a href="https://www.linkedin.com/in/shadrack-kumi-/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
           <div class="footer-links">
             <router-link :to="{ name: 'terms' }">{{ $t('footer.terms') }}</router-link>
             <router-link :to="{ name: 'privacy' }">{{ $t('footer.privacy') }}</router-link>
@@ -206,10 +218,20 @@ footer {
 .hours-row.closed span:last-child { color: #f472b6; }
 .footer-bottom {
   border-top: 1px solid #374151; padding-top: 2rem;
-  display: flex; justify-content: space-between; align-items: center;
+  display: flex; justify-content: space-between; align-items: flex-end;
 }
-.footer-bottom p { color: #6b7280; font-size: 0.875rem; }
-.footer-links { display: flex; gap: 1.5rem; }
+.footer-bottom-info { display: flex; flex-direction: column; gap: 0.75rem; }
+.footer-bottom-info p { color: #6b7280; font-size: 0.875rem; margin: 0; }
+.footer-built-by {
+  font-size: 0.875rem; color: #9ca3af; display: flex; align-items: center; gap: 0.5rem;
+}
+.footer-built-by strong { color: #d1d5db; font-weight: 600; }
+.footer-divider { color: #4b5563; }
+.footer-built-by a {
+  color: #0077b5; display: inline-flex; transition: opacity 0.2s; align-items: center;
+}
+.footer-built-by a:hover { opacity: 0.8; }
+.footer-links { display: flex; gap: 1.5rem; align-items: center; }
 .footer-links a { color: #6b7280; font-size: 0.875rem; transition: color .2s; }
 .footer-links a:hover { color: #f472b6; }
 
@@ -222,6 +244,7 @@ footer {
   .hamburger { display: flex; }
   .mobile-menu { display: block; }
   .footer-grid { grid-template-columns: 1fr; }
-  .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+  .footer-bottom { flex-direction: column; gap: 1.5rem; text-align: center; align-items: center; }
+  .footer-built-by { justify-content: center; flex-wrap: wrap; }
 }
 </style>
