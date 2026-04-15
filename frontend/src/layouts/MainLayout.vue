@@ -127,15 +127,19 @@
 
 <script setup>
 import { ref, computed } from 'vue';
+import { useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import { loadLocale, supportedLocales } from '../i18n/index.js';
+import { applyPageMeta } from '../utils/security';
 
 const { locale } = useI18n();
+const route = useRoute();
 const menuOpen = ref(false);
 const currentYear = computed(() => new Date().getFullYear());
 
 const switchLocale = async (code) => {
   await loadLocale(code);
+  applyPageMeta(route);
   menuOpen.value = false;
 };
 </script>

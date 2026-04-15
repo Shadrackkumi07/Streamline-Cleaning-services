@@ -27,7 +27,7 @@ const i18n = createI18n({
 export async function loadLocale(locale) {
   // Messages are already loaded — just switch the active locale
   i18n.global.locale.value = locale;
-  document.documentElement.setAttribute('lang', locale.split('-')[0]);
+  document.documentElement.setAttribute('lang', String(locale).replace('_', '-'));
 }
 
 export const supportedLocales = [

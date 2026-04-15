@@ -87,6 +87,17 @@ export function applyPageMeta(route) {
     link.setAttribute('href', href);
   };
 
+  const ensureJsonLd = (id, schema) => {
+    let script = document.querySelector(`script#${id}[type="application/ld+json"]`);
+    if (!script) {
+      script = document.createElement('script');
+      script.setAttribute('id', id);
+      script.setAttribute('type', 'application/ld+json');
+      document.head.appendChild(script);
+    }
+    script.textContent = JSON.stringify(schema);
+  };
+
   const normalizePath = (p) => {
     if (!p) return '/';
     const cleanPath = p.split('?')[0].split('#')[0];
@@ -99,7 +110,32 @@ export function applyPageMeta(route) {
   const canonicalUrl = `${siteOrigin}${canonicalPath === '/' ? '/' : canonicalPath}`;
 
   const ogImage = route.meta?.ogImage || `${siteOrigin}/logo.png`;
-  const locale = (document.documentElement.getAttribute('lang') || 'en').replace('_', '-');
+  const htmlLang = (document.documentElement.getAttribute('lang') || 'en').replace('_', '-');
+  const locale = htmlLang.toLowerCase();
+  const ogLocale = locale.includes('-')
+    ? locale.replace('-', '_')
+    : `${locale}_${locale.toUpperCase()}`;
+  const routeName = String(route?.name || 'home');
+  const routeLabelMap = {
+    home: 'Home',
+    booking: 'Book a Cleaning',
+    reviews: 'Client Reviews',
+    gallery: 'Gallery',
+    terms: 'Terms of Service',
+    privacy: 'Privacy Policy',
+    accessibility: 'Accessibility Statement'
+  };
+  const routeTypeMap = {
+    home: 'WebPage',
+    booking: 'Service',
+    reviews: 'CollectionPage',
+    gallery: 'CollectionPage',
+    terms: 'WebPage',
+    privacy: 'WebPage',
+    accessibility: 'WebPage'
+  };
+  const routeLabel = routeLabelMap[routeName] || 'Page';
+  const routeSchemaType = routeTypeMap[routeName] || 'WebPage';
 
   ensureMeta('name', 'description', description);
   ensureMeta('name', 'keywords', keywords);
@@ -111,19 +147,73 @@ export function applyPageMeta(route) {
   ensureMeta('property', 'og:type', route.meta?.ogType || 'website');
   ensureMeta('property', 'og:url', canonicalUrl);
   ensureMeta('property', 'og:image', ogImage);
-  ensureMeta('property', 'og:locale', locale);
+  ensureMeta('property', 'og:image:secure_url', ogImage);
+  ensureMeta('property', 'og:locale', ogLocale);
   ensureMeta('property', 'og:image:width', '400');
   ensureMeta('property', 'og:image:height', '400');
+  ensureMeta('property', 'og:image:type', 'image/png');
   ensureMeta('property', 'og:image:alt', 'Streamline Cleaning Services logo');
   ensureMeta('property', 'og:site_name', 'Streamline Cleaning Services');
 
-  ensureMeta('name', 'twitter:card', 'summary');
+  ensureMeta('name', 'twitter:card', 'summary_large_image');
   ensureMeta('name', 'twitter:title', pageTitle);
   ensureMeta('name', 'twitter:description', description);
   ensureMeta('name', 'twitter:image', ogImage);
+  ensureMeta('name', 'twitter:image:alt', 'Streamline Cleaning Services logo');
   ensureMeta('name', 'twitter:url', canonicalUrl);
 
   ensureLink('canonical', canonicalUrl);
+
+  const pageSchema = {
+    '@context': 'https://schema.org',
+    '@type': routeSchemaType,
+    '@id': `${canonicalUrl}#webpage`,
+    name: pageTitle,
+    description,
+    url: canonicalUrl,
+    inLanguage: locale,
+    isPartOf: {
+      '@id': `${siteOrigin}/#website`
+    },
+    about: {
+      '@id': `${siteOrigin}/#business`
+    }
+  };
+
+  if (routeName === 'booking') {
+    pageSchema.potentialAction = {
+      '@type': 'ReserveAction',
+      target: canonicalUrl,
+      name: 'Book a Cleaning Appointment'
+    };
+  }
+
+  const breadcrumbItems = [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: `${siteOrigin}/`
+    }
+  ];
+
+  if (canonicalPath !== '/') {
+    breadcrumbItems.push({
+      '@type': 'ListItem',
+      position: 2,
+      name: routeLabel,
+      item: canonicalUrl
+    });
+  }
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: breadcrumbItems
+  };
+
+  ensureJsonLd('route-webpage-schema', pageSchema);
+  ensureJsonLd('route-breadcrumb-schema', breadcrumbSchema);
 }
 
 export function enforceHttps() {

@@ -7,6 +7,7 @@ import { enforceHttps } from './utils/security';
 
 const app = createApp(App);
 enforceHttps();
+document.documentElement.setAttribute('lang', String(i18n.global.locale.value || 'en').replace('_', '-'));
 app.use(router);
 app.use(i18n);
 app.mount('#app');
