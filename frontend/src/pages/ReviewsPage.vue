@@ -3,7 +3,6 @@
     <section class="reviews-hero">
       <div class="container">
         <h1>{{ $t('reviews.heading') }}</h1>
-        <p>{{ $t('reviews.subheading') }}</p>
         <div v-if="averageRating" class="avg-rating">
           <span class="avg-number">{{ averageRating }}</span>
           <div class="stars">

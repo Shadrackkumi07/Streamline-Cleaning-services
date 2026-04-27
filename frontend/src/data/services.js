@@ -39,135 +39,40 @@ export const homeSizes = [
   '4+ Bedroom'
 ];
 
-export const beforeAfterCases = [
-  {
-    id: 'case-1',
-    title: 'Case 1',
-    before: [
-      {
-        id: 'case-1-before-1',
-        src: 'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170740/IMG_0644_w2cjl0.jpg',
-        alt: 'Before cleaning image 1',
-        title: 'Case 1 - Before',
-        tag: 'Before'
-      },
-      {
-        id: 'case-1-before-2',
-        src: 'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170740/IMG_0642_cds8lr.jpg',
-        alt: 'Before cleaning image 2',
-        title: 'Case 1 - Before',
-        tag: 'Before'
-      }
-    ],
-    after: [
-      {
-        id: 'case-1-after-1',
-        src: 'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170741/IMG_0702_jdyt3h.jpg',
-        alt: 'After cleaning image 1',
-        title: 'Case 1 - After',
-        tag: 'After'
-      },
-      {
-        id: 'case-1-after-2',
-        src: 'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170741/IMG_0676_uidein.jpg',
-        alt: 'After cleaning image 2',
-        title: 'Case 1 - After',
-        tag: 'After'
-      }
-    ]
-  },
-  {
-    id: 'case-2',
-    title: 'Case 2',
-    before: [
-      {
-        id: 'case-2-before-1',
-        src: 'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170735/IMG_8670_bjuyue.jpg',
-        alt: 'Before cleaning image 4',
-        title: 'Case 2 - Before',
-        tag: 'Before'
-      }
-    ],
-    after: [
-      {
-        id: 'case-2-after-1',
-        src: 'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170736/IMG_8695_f7yrt7.jpg',
-        alt: 'After cleaning image 3',
-        title: 'Case 2 - After',
-        tag: 'After'
-      }
-    ]
-  },
-  {
-    id: 'case-3',
-    title: 'Case 3',
-    before: [
-      {
-        id: 'case-3-before-1',
-        src: 'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170738/IMG_0717_pf3igw.jpg',
-        alt: 'Before cleaning image 5',
-        title: 'Case 3 - Before',
-        tag: 'Before'
-      }
-    ],
-    after: [
-      {
-        id: 'case-3-after-1',
-        src: 'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170738/IMG_0716_qtldkk.jpg',
-        alt: 'After cleaning image 5',
-        title: 'Case 3 - After',
-        tag: 'After'
-      }
-    ]
-  }
-];
-
-const featuredBeforeAfterUrls = new Set(
-  beforeAfterCases.flatMap((c) => [...c.before, ...c.after].map((img) => img.src))
-);
-
-// Add every Cloudinary folder URL below. Featured before/after URLs are excluded automatically.
-export const cloudinaryFolderUrls = [
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170729/IMG_0541_rtalmb.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170730/IMG_0548_k8syxw.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170730/IMG_0550_fuprqu.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170730/IMG_0551_mujsd0.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170730/IMG_0552_sxt9ae.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170730/IMG_0556_ljrkg1.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170730/IMG_0557_tuic1p.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170731/IMG_0463_nc6mkr.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170731/IMG_0467_kupbqt.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170731/IMG_0468_cr4y6c.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170731/IMG_0474_pidzxe.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170731/IMG_0519_p6tlct.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170731/IMG_0520_b4yo6w.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170731/IMG_0521_jixcqd.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170731/IMG_0558_xvlmsl.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170733/IMG_0522_onl9hh.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170734/IMG_0440_d9otrt.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170734/IMG_0454_ghj05r.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170734/IMG_0476_lzw2gm.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170734/IMG_2696_o6zxgq.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170734/IMG_2697_fy0zuw.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170734/IMG_2698_vggaep.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170735/IMG_8670_bjuyue.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170735/IMG_8693_nngnvv.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170736/IMG_2693_onvjsn.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170736/IMG_8695_f7yrt7.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170736/IMG_9280_x21n7l.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170736/IMG_9282_k7h3oc.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170736/IMG_9284_ss1ngl.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170737/IMG_0710_kdkqch.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170737/IMG_2695_mdcpi3.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170737/IMG_9283_mu3ovo.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170737/IMG_9286_osstx9.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170738/IMG_0713_epb1dj.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170738/IMG_0716_qtldkk.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170738/IMG_0717_pf3igw.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170740/IMG_0642_cds8lr.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170740/IMG_0644_w2cjl0.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170741/IMG_0676_uidein.jpg',
-  'https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170741/IMG_0702_jdyt3h.jpg'
+// Public gallery images (served from `frontend/public/Photos/**`).
+// Keep these flattened as requested (no folder UI), but paths can include subfolders.
+export const localGalleryPaths = [
+  'Photos/129 Kitchen_Dining_Front Room/collage_export_53BDF4C1-E0AC-4026-B59B-561BDDB7AB1A.JPG',
+  'Photos/129 Bedrooms/collage_export_611624C5-E5EA-4180-84A0-8E3E2AF7F13F.JPG',
+  'Photos/100 Move Out/IMG_2693.jpg',
+  'Photos/100 Move Out/IMG_2698.jpg',
+  'Photos/129 Bathrooms/collage_export_34835E10-DA21-460F-B790-DCBA3EF9A248.JPG',
+  'Photos/129 Bathrooms/collage_export_541079D8-E8E6-4561-ACF4-6D7E874CB8CC.JPG',
+  'Photos/R3 Bathroom/collage_export_171695D3-CCBB-42A3-A631-6791AC42A06B.JPG',
+  'Photos/R3 Bathroom/collage_export_A7B9BC32-22CE-466F-9CEE-9B34C88CA4F3.JPG',
+  'Photos/R3 Bathroom/collage_export_F25CE3B2-9F2D-439B-A1AA-8090E45706F7.JPG',
+  'Photos/100 Move Out/collage_export_5F81F4C1-4AA4-4426-A09A-06EBB396A959.JPG',
+  'Photos/R3 Kitchen/collage_export_3CFDDB39-5104-4850-9202-A0A9C491BFD7.JPG',
+  'Photos/129 Kitchen_Dining_Front Room/collage_export_30A723FF-3D6D-4371-90DD-E63F4A115856.JPG',
+  'Photos/129 Bedrooms/collage_export_D14BF56A-B1DD-4F38-9857-947DAD1F5C4F.JPG',
+  'Photos/R3 Kitchen/collage_export_22296F44-3808-46BB-B994-0CB299019B20.JPG',
+  'Photos/129 Bedrooms/collage_export_E0457393-A2B7-4551-B54E-4FE86E04ADB3.JPG',
+  'Photos/R3 Kitchen/collage_export_F30B6395-11B7-47ED-9026-D2736B99E085.JPG',
+  'Photos/129 Kitchen_Dining_Front Room/collage_export_C96BCEE9-4B93-4839-9203-30B9C14CE5DF.JPG',
+  'Photos/R3 Bathroom/collage_export_92190775-5D63-492D-9732-F902259AA381.JPG',
+  'Photos/129 Bathrooms/collage_export_61637C50-01E9-4F5F-BECF-1B0C5B3C032E.JPG',
+  'Photos/100 Move Out/IMG_2695.jpg',
+  'Photos/100 Move Out/collage_export_611ADBC5-0861-41A3-9B2A-2E1827B31EED.JPG',
+  'Photos/R3 Bathroom/collage_export_9361A468-F409-48A2-8323-14FFA12B7DA5.JPG',
+  'Photos/100 Move Out/IMG_2696.jpg',
+  'Photos/R3 Kitchen/collage_export_A86AF4A4-23B5-4CAB-BB37-E5CE99274618.JPG',
+  'Photos/R3 Bathroom/collage_export_EC6287F8-5C0F-426E-8C06-747101DF4223.JPG',
+  'Photos/R3 Bathroom/collage_export_913505BB-B327-47ED-88BC-BEBF3A2F0A30.JPG',
+  'Photos/129 Bathrooms/collage_export_7CBC7233-4E77-4B3B-A368-E8A558244EBF.JPG',
+  'Photos/R3 Bathroom/collage_export_F493452C-2211-45FE-8480-914497CC6066.JPG',
+  'Photos/100 Move Out/IMG_2697.jpg',
+  'Photos/100 Move Out/IMG_8645.jpg',
+  'Photos/R3 Bathroom/collage_export_2ECD852D-D39A-412F-A705-A377EEEEB781.JPG'
 ];
 
 const extractTitleFromUrl = (url) => {
@@ -177,15 +82,15 @@ const extractTitleFromUrl = (url) => {
   return cleaned || 'Gallery Image';
 };
 
-export const fullGalleryItems = cloudinaryFolderUrls
-  .filter((src) => !featuredBeforeAfterUrls.has(src))
-  .map((src, index) => ({
-    id: `folder-${index + 1}`,
-    src,
-    alt: extractTitleFromUrl(src),
-    title: extractTitleFromUrl(src),
+export const fullGalleryItems = localGalleryPaths.map((path, index) => {
+  const normalized = String(path).replace(/\\/g, '/').replace(/^\/+/, '');
+  const publicSrc = `/${encodeURI(normalized)}`;
+  const title = extractTitleFromUrl(normalized);
+  return {
+    id: `local-${index + 1}`,
+    src: publicSrc,
+    alt: title,
+    title,
     tag: 'Our Work'
-  }));
-
-// Backward-compatible flattened list for components expecting galleryItems.
-export const galleryItems = beforeAfterCases.flatMap((c) => [...c.before, ...c.after]);
+  };
+});

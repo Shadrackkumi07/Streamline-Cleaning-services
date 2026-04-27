@@ -16,7 +16,7 @@
           <router-link to="/#services">{{ $t('nav.services') }}</router-link>
           <router-link :to="{ name: 'booking' }">{{ $t('nav.booking') }}</router-link>
           <router-link to="/#gallery">{{ $t('nav.gallery') }}</router-link>
-          <router-link to="/#reviews">{{ $t('nav.reviews') }}</router-link>
+          <router-link :to="{ name: 'reviews' }">{{ $t('nav.reviews') }}</router-link>
           <router-link to="/#contact">{{ $t('nav.contact') }}</router-link>
         </div>
 
@@ -50,7 +50,7 @@
           <router-link to="/#services" @click="menuOpen = false">{{ $t('nav.services') }}</router-link>
           <router-link :to="{ name: 'booking' }" @click="menuOpen = false">{{ $t('nav.booking') }}</router-link>
           <router-link to="/#gallery" @click="menuOpen = false">{{ $t('nav.gallery') }}</router-link>
-          <router-link to="/#reviews" @click="menuOpen = false">{{ $t('nav.reviews') }}</router-link>
+          <router-link :to="{ name: 'reviews' }" @click="menuOpen = false">{{ $t('nav.reviews') }}</router-link>
           <router-link to="/#contact" @click="menuOpen = false">{{ $t('nav.contact') }}</router-link>
           <select class="lang-select mobile-lang" :value="locale" @change="switchLocale($event.target.value)" aria-label="Language">
             <option v-for="l in supportedLocales" :key="l.code" :value="l.code">{{ l.label }}</option>

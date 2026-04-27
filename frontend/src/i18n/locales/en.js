@@ -55,7 +55,7 @@
   },
   reviews: {
     heading: 'What Our Clients Say',
-    subheading: 'Rated 4.9 / 5 from over 120+ happy reviews.',
+    subheading: '',
     viewAll: 'View All Reviews',
     leaveReview: 'Leave a Review',
     name: 'Your Name',
