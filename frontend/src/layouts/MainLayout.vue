@@ -168,6 +168,9 @@ nav {
   padding: 4px 8px; border-radius: 6px; border: 1px solid #e5e7eb;
   font-size: 0.8rem; color: #4b5563; background: #fff; cursor: pointer;
 }
+@media (max-width: 768px) {
+  .nav-right-group .lang-select { display: none; }
+}
 .built-by {
   font-size: 0.75rem; color: #6b7280; display: flex; align-items: center; gap: 0.5rem;
   white-space: nowrap; margin-left: 0.75rem; padding-left: 0.75rem; border-left: 1px solid #e5e7eb;

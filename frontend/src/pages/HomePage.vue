@@ -194,6 +194,9 @@ h1 span { color: #f472b6; }
 .gallery-section { padding: 6rem 1.5rem; background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%); }
 .gallery-btn { display: flex; align-items: center; gap: 8px; color: #ec4899; font-weight: 700; background: none; border: none; cursor: pointer; font-size: 1rem; transition: color .2s; margin: 0 auto; }
 .gallery-btn:hover { color: #db2777; }
+@media (max-width: 768px) {
+  .gallery-btn { margin-top: -3rem; }
+}
 
 .contact-section { padding: 6rem 1.5rem; background: #fff; border-top: 1px solid #f3f4f6; }
 .contact-inner { max-width: 1280px; margin: 0 auto; display: flex; gap: 4rem; }
@@ -205,6 +208,17 @@ h1 span { color: #f472b6; }
 .contact-item h4 { font-weight: 700; color: #1f2937; margin-bottom: 4px; }
 .contact-item p { color: #6b7280; font-size: 0.9rem; }
 .contact-form { flex: 1; background: #f9fafb; padding: 2.5rem; border-radius: 1.5rem; border: 1px solid #f3f4f6; }
+
+.form-group { margin-bottom: 1.5rem; }
+.form-group label { display: block; font-weight: 600; color: #374151; margin-bottom: 0.5rem; font-size: 0.9rem; }
+.form-group input,
+.form-group textarea { width: 100%; padding: 0.75rem; border: 1px solid #e5e7eb; border-radius: 0.5rem; font-size: 1rem; font-family: inherit; }
+.form-group input:focus,
+.form-group textarea:focus { outline: none; border-color: #f472b6; box-shadow: 0 0 0 3px rgba(244, 114, 182, 0.1); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.btn-dark { padding: 0.75rem 1.5rem; background: #1f2937; color: #fff; border: none; border-radius: 0.5rem; font-weight: 600; cursor: pointer; font-size: 0.95rem; transition: background 0.2s; }
+.btn-dark:hover:not(:disabled) { background: #111827; }
+.btn-dark:disabled { opacity: 0.6; cursor: not-allowed; }
 
 @media (max-width: 1024px) {
   .hero-inner { flex-direction: column; padding: 4rem 1.25rem 5rem; gap: 2rem; }
@@ -239,25 +253,62 @@ h1 span { color: #f472b6; }
 
   .services-section,
   .gallery-section,
-  .contact-section { padding: 4rem 1rem; }
+  .contact-section { padding: 4rem 1.5rem; }
 
+  .gallery-section { padding: 3rem 1.5rem; }
+  .gallery-btn { font-size: 0.95rem; }
+  
   .services-grid { grid-template-columns: 1fr; gap: 1.2rem; }
   .service-card { padding: 1.6rem 1.2rem; border-radius: 1.1rem; }
+  .service-card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+  .service-card p { font-size: 0.875rem; margin-bottom: 1rem; }
   .service-icon { width: 56px; height: 56px; margin-bottom: 1rem; }
   .service-icon img { width: 36px; height: 36px; }
 
   .contact-inner { gap: 2rem; }
   .contact-left h2 { font-size: 1.55rem; margin-bottom: 1rem; }
   .contact-item { margin-bottom: 1rem; }
-  .contact-item p { line-height: 1.5; }
-  .contact-form { padding: 1.2rem 1rem; border-radius: 1rem; }
+  .contact-item p { line-height: 1.5; font-size: 0.85rem; }
+  .contact-form { padding: 1.2rem 1.5rem; border-radius: 1rem; }
   .form-row { display: grid; grid-template-columns: 1fr; gap: 0.85rem; }
+  .form-group { margin-bottom: 1rem; }
+  .btn-dark { padding: 0.7rem 1.25rem; font-size: 0.9rem; }
 }
 
 @media (max-width: 430px) {
-  .hero-inner { padding: 2.8rem 0.85rem 3.4rem; }
+  .hero-inner { padding: 2.5rem 0.75rem 3rem; }
+  .hero-inner h1 { font-size: clamp(1.6rem, 8vw, 2rem); margin-bottom: 0.75rem; }
+  .hero-desc { font-size: 0.9rem; margin-bottom: 1rem; }
+  .hero-btns { gap: 0.5rem; }
+  .hero-btns :deep(a) { padding: 0.6rem; font-size: 0.85rem; }
+  
   .services-section,
   .gallery-section,
-  .contact-section { padding: 3.4rem 0.85rem; }
+  .contact-section { padding: 2.75rem 0.75rem; }
+  
+  .service-card { padding: 1.3rem 1rem; }
+  .service-card h3 { font-size: 1rem; margin-bottom: 0.4rem; }
+  .service-card p { font-size: 0.8rem; margin-bottom: 1rem; }
+  .service-price { font-size: 1.3rem; }
+  .service-icon { width: 48px; height: 48px; margin-bottom: 0.75rem; }
+  .service-icon img { width: 32px; height: 32px; }
+  
+  .gallery-section { padding: 2.5rem 0.75rem; }
+  .gallery-btn { font-size: 0.9rem; }
+  
+  .contact-left h2 { font-size: 1.25rem; margin-bottom: 0.75rem; }
+  .contact-left > p { font-size: 0.85rem; margin-bottom: 1.25rem; }
+  .contact-item { margin-bottom: 0.85rem; gap: 0.75rem; }
+  .contact-icon { padding: 0.5rem; }
+  .contact-item h4 { font-size: 0.95rem; }
+  .contact-item p { font-size: 0.8rem; }
+  
+  .contact-form { padding: 0.9rem 0.75rem; }
+  .form-group { margin-bottom: 0.65rem; }
+  .form-group label { font-size: 0.8rem; margin-bottom: 0.3rem; }
+  .form-group input,
+  .form-group textarea { font-size: 0.9rem; padding: 0.6rem; }
+  .form-row { gap: 0.75rem; }
+  .btn-dark { padding: 0.6rem 1rem; font-size: 0.85rem; }
 }
 </style>

@@ -22,6 +22,18 @@ export const services = [
     name: 'Commercial',
     description: 'Office and commercial space cleaning tailored to your business hours. Flexible scheduling including evenings and weekends.',
     icon: 'building'
+  },
+  {
+    id: 'events',
+    name: 'Events',
+    description: 'Pre and post-event cleaning services to ensure your venue is perfectly prepared and spotless.',
+    icon: 'sparkles'
+  },
+  {
+    id: 'organization',
+    name: 'Organization',
+    description: 'Professional organizing and tidying services to help declutter and optimize your living space.',
+    icon: 'box'
   }
 ];
 

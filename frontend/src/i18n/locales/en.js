@@ -10,8 +10,8 @@
   },
   hero: {
     badge: 'Top Rated Cleaning Service',
-    title1: 'Clean Spaces,',
-    title2: 'Clear Minds.',
+    title1: 'CLEAN SPACES,',
+    title2: 'CLEAR MINDS',
     description: 'Experience the joy of returning to a spotless home. We provide professional, reliable, and meticulous cleaning services tailored to your lifestyle.',
     bookNow: 'Book Online Now',
     viewServices: 'View Services',
@@ -20,7 +20,7 @@
   },
   services: {
     heading: 'Cleaning Services for Every Need',
-    subheading: 'From routine tidying to deep cleans, we have a package that fits your home and your budget.'
+    subheading: ''
   },
   booking: {
     heading: 'Book Your Clean in Minutes',
@@ -71,8 +71,8 @@
     phone: 'Phone',
     email: 'Email',
     location: 'Location',
-    locationDetail: 'North dakota and Minnesota area',
-    hours: 'Mon - Sun 9:00 AM - 6:00 PM',
+    locationDetail: 'NORTH DAKOTA AND MINNESOTA AREA',
+    hours: 'Mon-Sun 9am-9pm',
     firstName: 'First Name',
     lastName: 'Last Name',
     emailAddress: 'Email Address',
