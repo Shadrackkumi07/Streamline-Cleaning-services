@@ -27,13 +27,13 @@ export const services = [
     id: 'events',
     name: 'Events',
     description: 'Pre and post-event cleaning services to ensure your venue is perfectly prepared and spotless.',
-    icon: 'sparkles'
+    icon: 'calendar'
   },
   {
     id: 'organization',
     name: 'Organization',
     description: 'Professional organizing and tidying services to help declutter and optimize your living space.',
-    icon: 'box'
+    icon: 'organization'
   }
 ];
 

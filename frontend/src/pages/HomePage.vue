@@ -117,7 +117,9 @@ const serviceBadgeUrls = {
   broom: 'https://img.icons8.com/matisse/100/broom.png',
   sparkles: 'https://img.icons8.com/hands/100/eco-cleaning.png',
   box: 'https://img.icons8.com/emoji/48/package-.png',
-  building: 'https://img.icons8.com/plasticine/100/building.png'
+  building: 'https://img.icons8.com/plasticine/100/building.png',
+  calendar: 'https://img.icons8.com/external-flaticons-flat-flat-icons/64/external-calendar-cleaning-flaticons-flat-flat-icons.png',
+  organization: 'https://img.icons8.com/external-flaticons-flat-flat-icons/64/external-cleaning-cleaning-flaticons-flat-flat-icons-20.png'
 };
 
 const contactForm = reactive({ firstName: '', lastName: '', email: '', message: '' });
