@@ -145,6 +145,14 @@ const switchLocale = async (code) => {
 </script>
 
 <style scoped>
+.app-layout {
+  width: 100%;
+  overflow-x: hidden;
+}
+@supports (overflow: clip) {
+  .app-layout { overflow-x: clip; }
+}
+
 nav {
   position: sticky; top: 0; z-index: 50;
   background: rgba(255,255,255,0.9); backdrop-filter: blur(12px);

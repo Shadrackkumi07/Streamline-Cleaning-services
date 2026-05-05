@@ -71,7 +71,7 @@
     phone: 'Phone',
     email: 'Email',
     location: 'Location',
-    locationDetail: 'NORTH DAKOTA AND MINNESOTA AREA',
+    locationDetail: 'North Dakota',
     hours: 'Mon-Sun 9am-9pm',
     firstName: 'First Name',
     lastName: 'Last Name',

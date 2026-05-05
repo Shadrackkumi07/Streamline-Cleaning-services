@@ -8,8 +8,8 @@ const routes = [
     name: 'home',
     component: HomePage,
     meta: {
-      title: 'House Cleaning in North Dakota & Minnesota',
-      description: 'Trusted home and commercial cleaning in North Dakota and Minnesota. Book standard, deep, move-in/out, and commercial cleaning online in minutes.',
+      title: 'House Cleaning in North Dakota',
+      description: 'Trusted home and commercial cleaning in North Dakota. Book standard, deep, move-in/out, and commercial cleaning online in minutes.',
       keywords: 'fargo cleaning services, west fargo cleaning services, house cleaning fargo, house cleaning west fargo, deep cleaning services, move out cleaning, commercial cleaning',
       ogType: 'website',
       ogImage: 'https://streamlinecleaning.com/logo.png'
@@ -21,7 +21,7 @@ const routes = [
     component: () => import('../pages/BookingPage.vue'),
     meta: {
       title: 'Book a Cleaning Appointment',
-      description: 'Book cleaning services online for homes and businesses in North Dakota and Minnesota. Select service type, details, and your preferred schedule.',
+      description: 'Book cleaning services online for homes and businesses in North Dakota. Select service type, details, and your preferred schedule.',
       keywords: 'book cleaning fargo, book cleaning west fargo, schedule house cleaning fargo, schedule house cleaning west fargo, north dakota cleaners, minnesota cleaners',
       ogType: 'website',
       ogImage: 'https://streamlinecleaning.com/logo.png'
@@ -33,7 +33,7 @@ const routes = [
     component: () => import('../pages/ReviewsPage.vue'),
     meta: {
       title: 'Cleaning Service Reviews',
-      description: 'Read verified customer reviews for Streamline Cleaning Services across North Dakota and Minnesota.',
+      description: 'Read verified customer reviews for Streamline Cleaning Services across North Dakota.',
       keywords: 'fargo cleaning reviews, west fargo cleaning reviews, cleaning service reviews, house cleaner reviews, north dakota cleaning reviews, minnesota cleaning reviews',
       ogType: 'website',
       ogImage: 'https://streamlinecleaning.com/logo.png'

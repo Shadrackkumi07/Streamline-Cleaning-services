@@ -17,7 +17,7 @@
         </div>
         <div class="hero-right">
           <div class="hero-img-wrap">
-            <img src="/cleaning.jpg" alt="Cleaning service in action" loading="eager" />
+            <img src="/cleaning.png" alt="Cleaning service in action" loading="eager" />
             <div class="hero-img-overlay"></div>
           </div>
           <div class="hero-badge-float">
@@ -193,12 +193,28 @@ h1 span { color: #f472b6; }
 .service-price { font-size: 1.75rem; font-weight: 800; color: #ec4899; }
 .service-price span { font-size: 0.875rem; font-weight: 500; color: #9ca3af; }
 
-.gallery-section { padding: 6rem 1.5rem; background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%); }
-.gallery-btn { display: flex; align-items: center; gap: 8px; color: #ec4899; font-weight: 700; background: none; border: none; cursor: pointer; font-size: 1rem; transition: color .2s; margin: 0 auto; }
-.gallery-btn:hover { color: #db2777; }
-@media (max-width: 768px) {
-  .gallery-btn { margin-top: -3rem; }
+.gallery-section {
+  padding: 6rem 1.5rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+.gallery-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #ec4899;
+  font-weight: 700;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: color .2s;
+  margin: 0;
+}
+.gallery-btn:hover { color: #db2777; }
 
 .contact-section { padding: 6rem 1.5rem; background: #fff; border-top: 1px solid #f3f4f6; }
 .contact-inner { max-width: 1280px; margin: 0 auto; display: flex; gap: 4rem; }
