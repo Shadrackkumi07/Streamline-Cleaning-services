@@ -1,11 +1,15 @@
 {
   "name": "Streamline Cleaning Services",
   "short_name": "Streamline",
-  "description": "Professional home and commercial cleaning. Book online in minutes.",
+  "description": "Professional home and commercial cleaning in Fargo, West Fargo, and Moorhead. Book online in minutes.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#f472b6",
+  "lang": "en-US",
+  "dir": "ltr",
+  "categories": ["business", "lifestyle", "utilities"],
   "icons": [
     {
       "src": "/favicon.png",
@@ -18,6 +22,22 @@
       "sizes": "any",
       "type": "image/png",
       "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Book a Cleaning",
+      "short_name": "Book Now",
+      "description": "Schedule your professional cleaning service online",
+      "url": "/booking",
+      "icons": [{ "src": "/favicon.png", "sizes": "any" }]
+    },
+    {
+      "name": "View Reviews",
+      "short_name": "Reviews",
+      "description": "Read verified customer reviews",
+      "url": "/reviews",
+      "icons": [{ "src": "/favicon.png", "sizes": "any" }]
     }
   ]
 }

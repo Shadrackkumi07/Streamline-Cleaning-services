@@ -5,73 +5,84 @@
 
   <url>
     <loc>https://streamlinecleaning.com/</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://streamlinecleaning.com/logo.png</image:loc>
       <image:title>Streamline Cleaning Services Logo</image:title>
+      <image:caption>Professional home and commercial cleaning in Fargo, ND</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://streamlinecleaning.com/cleaning.png</image:loc>
+      <image:title>Professional Cleaning Service in Action — Fargo, ND</image:title>
+      <image:caption>Streamline Cleaning Services — trusted home cleaning in Fargo and West Fargo</image:caption>
     </image:image>
   </url>
 
   <url>
     <loc>https://streamlinecleaning.com/booking</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://streamlinecleaning.com/logo.png</image:loc>
       <image:title>Book a Cleaning — Streamline Cleaning Services</image:title>
+      <image:caption>Book house cleaning or commercial cleaning online in Fargo, ND</image:caption>
     </image:image>
   </url>
 
   <url>
     <loc>https://streamlinecleaning.com/reviews</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://streamlinecleaning.com/logo.png</image:loc>
       <image:title>Client Reviews — Streamline Cleaning Services</image:title>
+      <image:caption>5-star reviews from satisfied customers in Fargo and West Fargo</image:caption>
     </image:image>
   </url>
 
   <url>
     <loc>https://streamlinecleaning.com/gallery</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170734/IMG_2697_fy0zuw.jpg</image:loc>
       <image:title>Commercial Space Deep Clean — Streamline Cleaning Services</image:title>
+      <image:caption>Before and after commercial deep cleaning in Fargo, ND</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170736/IMG_9284_ss1ngl.jpg</image:loc>
-      <image:title>Spotless Kitchen — Streamline Cleaning Services</image:title>
+      <image:title>Spotless Kitchen After Professional Cleaning — Streamline Cleaning Services</image:title>
+      <image:caption>Professional kitchen cleaning results in Fargo, West Fargo, and Moorhead</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://res.cloudinary.com/dfeedwjpf/image/upload/v1776170729/IMG_0706_uuzmf4.jpg</image:loc>
-      <image:title>Pristine Bathroom Detail — Streamline Cleaning Services</image:title>
+      <image:title>Pristine Bathroom After Deep Clean — Streamline Cleaning Services</image:title>
+      <image:caption>Bathroom deep cleaning service in North Dakota and Minnesota</image:caption>
     </image:image>
   </url>
 
   <url>
     <loc>https://streamlinecleaning.com/terms</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-05-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
     <loc>https://streamlinecleaning.com/privacy</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-05-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
     <loc>https://streamlinecleaning.com/accessibility</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-05-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
